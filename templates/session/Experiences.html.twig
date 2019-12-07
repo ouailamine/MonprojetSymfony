@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title%} Experices {% endblock %}
+
+{% block body %}
+<h1>Mes Experiences</h1>
+  {% if Experiences %}
+    <table class="table table-striped" >
+      <thead>
+        <tr>
+         <th>Date</th>
+         <th>Titre</th>
+         <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%  for experience in Experiences %}
+          <tr>
+            <td>{{ experience.date }}</td>
+            <td>{{ experience.titre }}</td>
+            <td>{{ experience.description }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>projets yok</p>
+  {% endif %}
+
+{% endblock %}

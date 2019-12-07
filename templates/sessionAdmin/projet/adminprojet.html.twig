@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title%} projets  {% endblock %}
+
+{% block body %}
+<h1>Mes Projet</h1>
+  {% if projets %}
+    <table class="table table-striped" >
+      <thead>
+        <tr>
+         <th>Titre</th>
+         <th>Description</th>
+         <th>update</th>
+        <th>delete</th>
+        <th>new</th>
+      
+        </tr>
+      </thead>
+      <tbody>
+        {%  for projet in projets %}
+          <tr>
+            <td>{{ projet.titre }}</td>
+            <td>{{ projet.description }}</td>
+            <td><a href="/projet/edit/{{ projet.id }}" class="btn btn-secondary" data-id="{{ projet.id }}">update</a></td>
+            <td><a href="/projet/delete/{{ projet.id }}" class="btn btn-danger delete-article" data-id="{{ projet.id }}">delete</a></td>
+            <td><a href="/projet/new" class="btn btn-danger delete-article" data-id="{{ projet.id }}">new</a></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>projets yok</p>
+  {% endif %}
+{% endblock %}

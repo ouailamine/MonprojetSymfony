@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title%} Formation  {% endblock %}
+
+{% block body %}
+<h1>Mes Formations</h1>
+  {% if formations %}
+    <table class="table table-striped" >
+      <thead>
+        <tr>
+         <th>Date</th>
+         <th>Titre</th>
+        
+        </tr>
+      </thead>
+      <tbody>
+        {%  for Formation in formations %}
+          <tr>
+            <td>{{ Formation.date }}</td>
+            <td>{{ Formation.titre }}</td>
+            
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>projets yok</p>
+  {% endif %}
+
+{% endblock %}

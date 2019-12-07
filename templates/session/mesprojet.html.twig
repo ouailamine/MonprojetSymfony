@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title%} Mes Projets  {% endblock %}
+
+{% block body %}
+<h1>Mes Projet</h1>
+  {% if projets %}
+    <table class="table table-striped" >
+      <thead>
+        <tr>
+         <th>Titre</th>
+         <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%  for projet in projets %}
+          <tr>
+            <td>{{ projet.titre }}</td>
+            <td>{{ projet.description }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>projets yok</p>
+  {% endif %}
+
+{% endblock %}
