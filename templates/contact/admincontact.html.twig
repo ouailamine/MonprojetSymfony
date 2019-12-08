@@ -11,6 +11,8 @@
          <th>adresse</th>
          <th>telephone</th>
          <th>Email</th>
+         <th>update</th>
+        <th>delete</th>
         </tr>
       </thead>
       <tbody>
@@ -19,21 +21,19 @@
             <td>{{ contact.adresse }}</td>
             <td>{{ contact.telephone }}</td>
             <td>{{ contact.mail }}</td>
+             <td><a href="/contact/edit/{{ contact.id }}" class="btn btn-secondary" data-id="{{ contact.id }}">update</a></td>
+            <td><a href="/contact/delete/{{ contact.id }}" class="btn btn-danger delete-article" data-id="{{ contact.id }}">delete</a></td>
+           
           </tr>
         {% endfor %}
       </tbody>
     </table>
+    <td><a href="/contact/new" class="btn btn-danger delete-article">new</a></td>
   {% else %}
-    <p>projets yok</p>
+    <p>Pas de contact</p>
+    <td><a href="/contact/new" class="btn btn-primary mt-3">new</a></td>
   {% endif %}
 
-
-<h2>Par reseau sociaux</h2>
-<div>
-<a href="https://www.facebook.com/" target="_blank" class="fa fa-facebook"></a>
-<a href="https://www.twitter.com/" class="fa fa-twitter" target="_blank"></a>
-<a href="https://www.linkedin.com/" class="fa fa-linkedin" target="_blank"></a>
-</div>
 
 
 {% endblock %}

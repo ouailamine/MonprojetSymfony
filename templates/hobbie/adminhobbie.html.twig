@@ -9,18 +9,22 @@
       <thead>
         <tr>
          <th>Description</th>
+          <th>update</th>
+        <th>delete</th>
         </tr>
       </thead>
       <tbody>
         {%  for hobbie in hobbies %}
           <tr>
             <td>{{ hobbie.description }}</td>
+            <td><a href="/hobbie/edit/{{ hobbie.id }}" class="btn btn-secondary" data-id="{{ hobbie.id }}">update</a></td>
+            <td><a href="/hobbie/delete/{{ hobbie.id }}" class="btn btn-danger delete-article" data-id="{{ hobbie.id }}">delete</a></td>
           </tr>
         {% endfor %}
       </tbody>
     </table>
   {% else %}
-    <p>projets yok</p>
+    <p>Tableau vide</p>
   {% endif %}
-
+<td><a href="/hobbie/new" class="btn btn-primary mt-3">new</a></td>
 {% endblock %}

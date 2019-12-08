@@ -3,13 +3,15 @@
 {% block title%} Competences {% endblock %}
 
 {% block body %}
-<h1>Mes Projet</h1>
+<h1>Mes Competences</h1>
   {% if Competences %}
     <table class="table table-striped" >
       <thead>
         <tr>
          <th>Titre</th>
          <th>Description</th>
+          <th>update</th>
+          <th>delete</th>
         </tr>
       </thead>
       <tbody>
@@ -17,12 +19,15 @@
           <tr>
             <td>{{ competence.titre }}</td>
             <td>{{ competence.description }}</td>
+             <td><a href="/competence/edit/{{ competence.id }}" class="btn btn-secondary" data-id="{{ competence.id }}">update</a></td>
+            <td><a href="/competence/delete/{{ competence.id }}" class="btn btn-danger delete-article" data-id="{{ competence.id }}">delete</a></td>
           </tr>
         {% endfor %}
       </tbody>
     </table>
   {% else %}
-    <p>projets yok</p>
+    <p>tableau vide</p>
   {% endif %}
+<td><a href="/newComp" class="btn btn-primary mt-3" >new</a></td>
 
 {% endblock %}

@@ -10,9 +10,10 @@
         <tr>
          <th>Titre</th>
          <th>Description</th>
+          <th>Lien</th>
          <th>update</th>
         <th>delete</th>
-        <th>new</th>
+      
       
         </tr>
       </thead>
@@ -21,9 +22,10 @@
           <tr>
             <td>{{ projet.titre }}</td>
             <td>{{ projet.description }}</td>
+            <td>{{ projet.lien }}</td>
             <td><a href="/projet/edit/{{ projet.id }}" class="btn btn-secondary" data-id="{{ projet.id }}">update</a></td>
             <td><a href="/projet/delete/{{ projet.id }}" class="btn btn-danger delete-article" data-id="{{ projet.id }}">delete</a></td>
-            <td><a href="/projet/new" class="btn btn-danger delete-article" data-id="{{ projet.id }}">new</a></td>
+            
           </tr>
         {% endfor %}
       </tbody>
@@ -31,4 +33,5 @@
   {% else %}
     <p>projets yok</p>
   {% endif %}
+  <td><a href="/projet/new" class="btn btn-primary mt-3">new</a></td>
 {% endblock %}

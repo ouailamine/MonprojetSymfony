@@ -10,6 +10,7 @@
         <tr>
          <th>Titre</th>
          <th>Description</th>
+         <th>Lien du projet</th>
         </tr>
       </thead>
       <tbody>
@@ -17,12 +18,13 @@
           <tr>
             <td>{{ projet.titre }}</td>
             <td>{{ projet.description }}</td>
+            <td>{{ projet.lien }}</td>
           </tr>
         {% endfor %}
       </tbody>
     </table>
   {% else %}
-    <p>projets yok</p>
+    <p>Pas de projet</p>
   {% endif %}
 
 {% endblock %}

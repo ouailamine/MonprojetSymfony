@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title%} Competences {% endblock %}
+
+{% block body %}
+<h1>Mes Projet</h1>
+  {% if Competences %}
+    <table class="table table-striped" >
+      <thead>
+        <tr>
+         <th>Titre</th>
+         <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%  for competence in Competences %}
+          <tr>
+            <td>{{ competence.titre }}</td>
+            <td>{{ competence.description }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>tableau vide</p>
+  {% endif %}
+
+{% endblock %}

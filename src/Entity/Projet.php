@@ -26,6 +26,11 @@ class Projet
      */
     private $description;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $lien;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -51,6 +56,18 @@ class Projet
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+   
+    public function getLien(): ?string
+    {
+        return $this->lien;
+    }
+
+    public function setLien(string $lien): self
+    {
+        $this->lien = $lien;
 
         return $this;
     }
