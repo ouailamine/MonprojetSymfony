@@ -43,7 +43,7 @@ class FormationController extends AbstractController
 
     //creation new $formations
      /**
-     * @Route("/formation/new", name="ajout")
+     * @Route("/formation/new", name="ajoutdd")
      * @Method({"GET","POST"})
      */
     public function createformation(Request $request)

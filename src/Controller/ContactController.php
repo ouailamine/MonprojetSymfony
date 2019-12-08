@@ -44,7 +44,7 @@ class ContactController extends AbstractController
 
     //creation new $contacts
      /**
-     * @Route("/contact/new", name="ajoute")
+     * @Route("/contact/new", name="ajou")
      * @Method({"GET","POST"})
      */
     public function createcontact(Request $request)
